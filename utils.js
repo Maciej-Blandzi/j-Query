@@ -49,6 +49,6 @@ var inputValue = $('input:text').val()
 
 $('form').on('submit', function(event){
   event.preventDefault()
-  $(':button').append('<p>' +inputValue + '</p>')
+  $('input:first').append('<div>' +inputValue + '</div>')
 })
 

@@ -1,5 +1,16 @@
 .red{
   width: 300px;
   height: fit-content;
-  background-color: red
+  background-color: lightblue;
+}
+
+#tabb{
+  background-color: lightcyan;
+}
+
+td{
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  background-color: lightblue;
 }
