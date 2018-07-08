@@ -51,6 +51,14 @@ const createTable2 = (width, height) => {
 
 createTable2(7,7)
 
-$('td').on('click', function(){
-  $(this).css('background-color','red')
-})
+
+
+function switchColor(event){
+    if(event.target.classList.contains('red')){
+      event.target.classList.remove('red')
+    }else{event.target.classList.add('red')
+    }
+  }
+
+
+$('td').on('click', switchColor())

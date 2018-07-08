@@ -56,12 +56,49 @@ $('input:nth-child(5)').on('input', function(){
   $(this).css('color','black')
 })
 
+//=====================  getting and displaying data ===================
+
+
+$('button#Button01').on('click', function(){
+  $('ul').css('list-style','none')
+
+  console.log('new list')
+})
+
+
+$('button#Button02').on('click', function(){
+  $('li').prepend('* ')
+  console.log('stars added')
+})
+
+
+$('button#Button03').on('click', function(){
+  const $liText = $('ul').text()
+  $('ul').after('<p>' + 'text from the list above: ' + $liText + '</p>').append('<p>dupa</p>').css('color','red')
+
+  console.log('review')
+})
+
+$('button#Button04').on('click', function(){
+  $('li').append($('li:last').text())
+  console.log('appending stuff')
+})
+
+$('button#Button05').on('click', function(){
+  $('ul').replaceWith('<p>destruction</p>').toggle()
+  console.log('destruction')
+})
+
+
+
+
+
 
 
 
 $('form').on('submit', function(event){
 
-  const $listHTML = $('li:nth-child(2)').text()
+  const $listHTML = $('li:nth-child(3)').text()
   const $inputValue = $('input:text').val()
 
   event.preventDefault()
