@@ -1,12 +1,17 @@
 $(function(){
   $('div').addClass('blue')
-  $('li').hide().fadeIn(1500)
+  const $li = $('li')
+  $li.hide().each(function(index){
+    $(this).delay(100*index).fadeIn(700)
+
+  })
 
   $('span').css({
     'color':'blue',
     'font-size':'+=10'
   })
 
+  $('.formm').css({'display':'flex','flex-flow':'column nowrap'})
 })
 
 
@@ -21,18 +26,27 @@ console.log($it)
 })
 
 
+//=============list item animation deletion
 
+$(function(){
+  $('li').on('click',function(){
+    $(this).animate({
+      marginLeft: '+=300'
+    },1000, function(){
+      $(this).fadeOut(700)
+    })
 
+  })
+})
 
 //=====================    form ===================================
 
 
-$('div.formm').css({'display':'flex','flex-flow':'column wrap'})
 
 
-// $('input:first').on('focus', function(){
-//   $(this).replaceWith('<p>this WAS first input and now its gone</p>').toggle()
-// });
+$('input:first').on('focus', function(){
+  $(this).replaceWith('<p>this WAS first input and now its gone</p>').toggle()
+});
 
 $('input:nth-child(2)').on('focus',function(){
   $(this).css('border','5px solid blue')
@@ -56,6 +70,11 @@ $('input:nth-child(5)').on('input', function(){
   $(this).css('color','black')
 })
 
+$('input:nth-child(6)').on('mousedown', function(){
+  $(this).css('border','5px solid red')
+}).on('mouseup', function(){
+  $(this).css('border','none')
+})
 //=====================  getting and displaying data ===================
 
 
@@ -72,17 +91,30 @@ $('button#Button02').on('click', function(){
 })
 
 
-$('button#Button03').on('click', function(){
-  const $liText = $('ul').text()
-  $('ul').after('<p>' + 'text from the list above: ' + $liText + '</p>').append('<p>dupa</p>').css('color','red')
 
+const $liText = $('ul').text()
+const $dupa = $('<p>dupa</p>').css('color','red')
+$('button#Button03').on('click', function(){
+
+  $('ul').after('<p>' + 'text from the list above: ' + $liText + '</p>').append($dupa)
   console.log('review')
+
+}).on('mouseout', function(){
+  $($liText, $dupa).remove()
 })
+
+
 
 $('button#Button04').on('click', function(){
-  $('li').append($('li:last').text())
-  console.log('appending stuff')
+  $('li').each(function() {
+    $(this).append($('li:last').text())
+  })
+
+  console.log('addind stuff')
 })
+
+
+
 
 $('button#Button05').on('click', function(){
   $('ul').replaceWith('<p>destruction</p>').toggle()

@@ -52,13 +52,19 @@ const createTable2 = (width, height) => {
 createTable2(7,7)
 
 
-
-function switchColor(event){
-    if(event.target.classList.contains('red')){
-      event.target.classList.remove('red')
-    }else{event.target.classList.add('red')
-    }
-  }
+$('td').on('click', function(){
+  $(this)
+    .addClass('red')
+    .on('click',function(){ $(this).removeClass('red')}
+)})
 
 
-$('td').on('click', switchColor())
+// function switchColor(event){
+//     if(event.target.classList.contains('red')){
+//       event.target.classList.remove('red')
+//     }else{event.target.classList.add('red')
+//     }
+//   }
+//
+//
+// $('td').on('click', switchColor())
