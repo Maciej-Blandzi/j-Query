@@ -2,12 +2,16 @@ $(function() {
 
   $('li').hide()
   const $button = $('button.btn')
+  const $ul = $('ul')
 
   $button.on('click', function () {
 
-    $('ul').children().each(function (index) {
+    $ul.children().each(function (index) {
       $(this).delay(100 * index).fadeIn(700)
     })
+    $ul.next().css('color','yellow')
+    $ul.siblings().addClass('red')
+    $ul.parent().css('border','3px black solid')
 
   })
 })
