@@ -1,18 +1,26 @@
-$(function(){
-  $('div').addClass('blue')
-  const $li = $('li')
-  $li.hide().each(function(index){
-    $(this).delay(100*index).fadeIn(700)
+$(function() {
+
+  $('li').hide()
+  const $button = $('button.btn')
+
+  $button.on('click', function () {
+
+    $('ul').children().each(function (index) {
+      $(this).delay(100 * index).fadeIn(700)
+    })
 
   })
+})
 
+
+  $('div').addClass('blue')
   $('span').css({
     'color':'blue',
     'font-size':'+=10'
   })
 
   $('.formm').css({'display':'flex','flex-flow':'column nowrap'})
-})
+
 
 
 $('li:first-child').on('click', function(){
