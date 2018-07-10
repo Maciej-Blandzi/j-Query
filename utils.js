@@ -1,23 +1,27 @@
+const $button = $('button.btn')
+const $ul2 = $('ul.ul2')
+const $li2 = $('ul.ul2 li')
+
 $(function() {
 
-  $('li').hide()
-  const $button = $('button.btn')
-  const $ul = $('ul')
+  $li2.hide()
+
 
   $button.on('click', function () {
 
-    $ul.children().each(function (index) {
-      $(this).delay(100 * index).fadeIn(700)
+    $ul2.children().each(function (index) {
+      $(this).delay(200 * index).fadeIn(700)
     })
-    $ul.next().css('color','yellow')
-    $ul.siblings().addClass('red')
-    $ul.parent().css('border','3px black solid')
+    $ul2.next().css('color','yellow')
+    $ul2.siblings().addClass('red')
+    $ul2.parent().css('border','3px black solid')
 
   })
 })
 
 
-  $('div').addClass('blue')
+  $('div.lista, div.formm').addClass('blue')
+
   $('span').css({
     'color':'blue',
     'font-size':'+=10'
@@ -27,13 +31,17 @@ $(function() {
 
 
 
-$('li:first-child').on('click', function(){
-  $('li:last').fadeOut(1000).fadeIn(1000)
-
-  const $it = $('li:nth-child(2)').text()
+$('.ul2 li:first-child').on('click', function(){
+  $('.ul2 li:last').fadeOut(1000).fadeIn(1000)
+  $(this).animate({
+    marginLeft: '+=300'
+  },1000, function(){
+    $(this).fadeOut(700)
+  })
+  const $it = $('.ul2 li:nth-child(2)').text()
 console.log($it)
-  $('li:nth-child(9)').prepend('<em>clicked</em>').append($it)
-  $('ul').after('<div>' + $it + '<div')
+  $('.ul2 li:nth-child(9)').prepend('<em>clicked</em>').append($it)
+  $ul.after('<div>' + $it + '<div')
 
 })
 
@@ -41,7 +49,7 @@ console.log($it)
 //=============list item animation deletion
 
 $(function(){
-  $('li').on('click',function(){
+  $li2.on('click',function(){
     $(this).animate({
       marginLeft: '+=300'
     },1000, function(){
@@ -91,24 +99,24 @@ $('input:nth-child(6)').on('mousedown', function(){
 
 
 $('button#Button01').on('click', function(){
-  $('ul').css('list-style','none')
+  $ul2.css('list-style','none')
 
   console.log('new list')
 })
 
 
 $('button#Button02').on('click', function(){
-  $('li').prepend('* ')
+  $li2.prepend('* ')
   console.log('stars added')
 })
 
 
 
-const $liText = $('ul').text()
+const $liText = $li2.text()
 const $dupa = $('<p>dupa</p>').css('color','red')
 $('button#Button03').on('click', function(){
 
-  $('ul').after('<p>' + 'text from the list above: ' + $liText + '</p>').append($dupa)
+  $ul2.after('<p>' + 'text from the list above: ' + $liText + '</p>').append($dupa)
   console.log('review')
 
 }).on('mouseout', function(){
@@ -118,8 +126,8 @@ $('button#Button03').on('click', function(){
 
 
 $('button#Button04').on('click', function(){
-  $('li').each(function() {
-    $(this).append($('li:last').text())
+  $li2.each(function() {
+    $(this).append($('.ul2 li:last').text())
   })
 
   console.log('addind stuff')
@@ -129,26 +137,24 @@ $('button#Button04').on('click', function(){
 
 
 $('button#Button05').on('click', function(){
-  $('ul').replaceWith('<p>destruction</p>').toggle()
+  $ul2.replaceWith('<p>destruction</p>').toggle()
   console.log('destruction')
 })
 
 
 
+const $button2 = $('button.btn2')
+const $form2 = $('form.formm')
+const $listHTML = $('li:last').text()
+const $inputValue = $('input:text').val()
+let $counter = 0
 
-
-
-
-
-$('form').on('submit', function(event){
-
-  const $listHTML = $('li:nth-child(3)').text()
-  const $inputValue = $('input:text').val()
-
-  event.preventDefault()
-  $(this)
-    .after('<div><p>' + $inputValue + '</p></div>')
-    .prepend('<p>' + $listHTML +'</p>').css('border','5px black solid')
+$button2.on('click', function(event){
+  event.preventDefault();
+  $counter +=1
+  $(this).after('<div><p>' + $inputValue + '</p></div>')
+         .before('<p>' + $listHTML +'</p>').css('border','5px black solid')
+         .prepend('<p>' + $counter + '</p>')
   console.log($inputValue)
 })
 
