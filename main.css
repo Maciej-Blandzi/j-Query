@@ -50,6 +50,7 @@ input{
   background-color: black;
   color: white;
   width: 200px;
+  padding: 10px;
 }
 
 #newElem:hover,
@@ -62,5 +63,6 @@ input{
 #inputValue,
 #addNew{
   padding:5px;
-  width: 200px
+  width: 200px;
+  display: block;
 }

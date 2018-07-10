@@ -19,16 +19,13 @@ $(function() {
   })
 
   $input.on('focus', function(){
-    $alert.hide().val('')
+    $alert.empty()
   })
 
-  $add.on('click', function(event){
-    event.preventDefault()
-    $input.val('')
-      ? $alert.show().append('<p> input cannot be empty</p>')
-      : $(function(){
+  $form.on('submit', function(event){
 
-      console.log('ok')
+    event.preventDefault()
+
       const $newItem = $input.val()
       console.log($newItem)
 
@@ -38,7 +35,6 @@ $(function() {
       $form.hide()
       $elemCont.show()
   })
+
+
 })
-
-
-  })
