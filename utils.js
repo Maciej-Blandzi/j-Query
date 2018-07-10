@@ -68,17 +68,17 @@ $('.formm input:first').on('focus', function(){
   $(this).replaceWith('<p>this WAS first input and now its gone</p>').toggle()
 });
 
-$('input:nth-child(2)').on('focus',function(){
+$('.forrmm input:nth-child(2)').on('focus',function(){
   $(this).css('border','5px solid blue')
 }).on('blur',function(){
   $(this).css('border','none')
 })
 
-$('input:nth-child(3)').on('focus',function(){
+$('.forrmm input:nth-child(3)').on('focus',function(){
   $(this).css('background-color', 'pink')
 }).on('blur',function(){$(this).css('background-color','white')})
 
-$('input:nth-child(4)').on('keydown', function(){
+$('.forrmm input:nth-child(4)').on('keydown', function(){
   $(this).css('background-color','lightblue')
 }).on('keyup', function(){
   $(this).css('background-color','white')

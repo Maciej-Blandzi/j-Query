@@ -45,14 +45,22 @@ input{
   background-color: pink;
   text-align: center;
 }
-#newElem {
+#newElem,
+#addNew{
   background-color: black;
   color: white;
   width: 200px;
 }
 
-#newElem:hover{
+#newElem:hover,
+#addNew:hover{
   background-color: white;
   color: black;
   transition: all .5s;
+}
+
+#inputValue,
+#addNew{
+  padding:5px;
+  width: 200px
 }
