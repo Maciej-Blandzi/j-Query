@@ -64,7 +64,7 @@ $(function(){
 
 
 
-$('input:first').on('focus', function(){
+$('.formm input:first').on('focus', function(){
   $(this).replaceWith('<p>this WAS first input and now its gone</p>').toggle()
 });
 
