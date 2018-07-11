@@ -2,6 +2,8 @@ const $button = $('button.btn')
 const $ul2 = $('ul.ul2')
 const $li2 = $('ul.ul2 li')
 
+
+
 $(function() {
 
   $li2.hide()
@@ -18,6 +20,7 @@ $(function() {
 
   })
 })
+
 
 
   $('div.lista, div.formm').addClass('blue')
@@ -156,7 +159,7 @@ $button2.on('click', function(event){
 
   $(this).css('border','5px black solid')
 
-  $('button.btn3').after('<p>'+count + $input2+'</p>')
+  $('button.btn3').after('<p>'+count +'. ' + $input2+'</p>')
 
   $inputValue.val('')
 

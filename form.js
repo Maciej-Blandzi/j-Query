@@ -1,3 +1,5 @@
+// ============= adding elements to list ====
+
 $(function() {
 
   const $list = $('.ul1')
@@ -26,8 +28,13 @@ $(function() {
 
     event.preventDefault()
 
+    $('.ul1 li').animate({
+      width: '+=150'
+    },600,function(){
+      $(this).width(200).fadeOut(300).fadeIn(600)
+    })
+
       const $newItem = $input.val()
-      console.log($newItem)
 
       $('.ul1 li:last').after('<li>'+$newItem+'</li>')
 
@@ -36,5 +43,24 @@ $(function() {
       $elemCont.show()
   })
 
+
+})
+
+//=== displaying time ===============
+
+const $curTime = $('button#date')
+
+let $date1 = new Date($.now())
+let $date2 = new Date($.now()).toDateString()
+
+$curTime.before($date2+ ' ')
+
+$curTime.on('click', function(event){
+  $('span.dt').fadeOut()
+
+  // date.setTime(event.timeStamp)
+
+
+  $(this).after('<span class="dt"> today is ' + $date1 + '</span>')
 
 })
