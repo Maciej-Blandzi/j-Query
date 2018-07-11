@@ -18,13 +18,17 @@ nav a{
   cursor: pointer;
 }
 
-
 .blue{
   width: 500px;
   height: fit-content;
   background-color: lightgreen;
 }
-
+#score{
+  font: italic 700 1.2rem 'Arial', sans-serif;
+  border: 1px solid black;
+  padding: 5px;
+  width: 200px;
+}
 #tabb,
 #tabb2{
   background-color: lightcyan;

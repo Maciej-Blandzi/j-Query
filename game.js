@@ -1,11 +1,16 @@
 
 var empty = 'td:not(.red):not(.green)'
+var scoreDisplay = document.getElementById('score')
+var score = 0
+
+scoreDisplay.innerText= 'your score is:  ' + score
 
 
 // toggling td color
 space1.addEventListener('click',function(event){
   event.target.matches(empty) ? toggleColors(event.target, 'green') : null
-
+  score+=1
+  scoreDisplay.innerText= 'your score is:  ' + score + ' points'
 })
 
 
