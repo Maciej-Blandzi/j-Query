@@ -24,17 +24,23 @@ createTable(10,10)
 
 // toggling td color
 space1.addEventListener('click',function(event){
-  event.target.matches('td') && (event.target.classList.contains('red'))
-    ? event.target.classList.remove('red')
-    : event.target.classList.add('red')
+  event.target.matches('td') ? toggleColors(event.target) : null
+
 })
 
 //set interval
 setInterval(function(){
   var cell = space1.querySelector('td')
-  cell.classList.contains('red') ? cell.classList.remove('red') : cell.classList.add('red')
+  toggleColors(cell)
+
 },200)
 
+// utility function
+const toggleColors = (item) => {
+  item.classList.contains('red')
+    ? item.classList.remove('red')
+    : item.classList.add('red')
+}
 
 //========================   jQuery table   ===========================
 const $space2 = $('#tabb2')
