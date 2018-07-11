@@ -10,25 +10,29 @@ table.appendChild(tbody)
 var td, tr;
 
 function createTable(width, height){
-  for(i=0;i<height;i+=1) {
+  for(i=0;i<width;i+=1) {
     var tr = document.createElement('tr')
     tbody.appendChild(tr)
 
-    for(j=0;j<width;j+=1){
+    for(j=0;j<height;j+=1){
       var td=document.createElement('td')
       tr.appendChild(td)
-
     }
   }
 }
+createTable(2,5)
 
-createTable(1,5)
-
+// toggling td color
 space1.addEventListener('click',function(event){
   if(event.target.matches('td')){
-    event.target.classList.add('red')
+    if(event.target.classList.contains('red')){
+      event.target.classList.remove('red')
+    }else {
+      event.target.classList.add('red')
+    }
   }
 })
+
 
 
 //========================   jQuery table   ===========================
@@ -52,8 +56,9 @@ const $createTable2= (h,w)=> {
 $createTable2(3,4)
 
 $tbody2.addClass('qq')
+
 $('.qq td').on('click',function(){
-  $(this).css('backgroundColor','black')
+  $(this).toggleClass('black')
 })
 
 
