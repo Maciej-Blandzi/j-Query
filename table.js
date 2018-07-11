@@ -20,19 +20,20 @@ function createTable(width, height){
     }
   }
 }
-createTable(2,5)
+createTable(10,10)
 
 // toggling td color
 space1.addEventListener('click',function(event){
-  if(event.target.matches('td')){
-    if(event.target.classList.contains('red')){
-      event.target.classList.remove('red')
-    }else {
-      event.target.classList.add('red')
-    }
-  }
+  event.target.matches('td') && (event.target.classList.contains('red'))
+    ? event.target.classList.remove('red')
+    : event.target.classList.add('red')
 })
 
+//set interval
+setInterval(function(){
+  var cell = space1.querySelector('td')
+  cell.classList.contains('red') ? cell.classList.remove('red') : cell.classList.add('red')
+},200)
 
 
 //========================   jQuery table   ===========================
@@ -61,6 +62,7 @@ $('.qq td').on('click',function(){
   $(this).toggleClass('black')
 })
 
-
-
-
+setInterval(function(){
+  let $cell2 = $('.qq td:first')
+  $cell2.toggleClass('black')
+},100)
