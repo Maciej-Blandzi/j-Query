@@ -1,20 +1,24 @@
+
+var empty = 'td:not(.red):not(.green)'
+
+
 // toggling td color
 space1.addEventListener('click',function(event){
-  event.target.matches('td') ? toggleColors(event.target) : null
+  event.target.matches(empty) ? toggleColors(event.target, 'green') : null
 
 })
 
 
 //set interval
 var intervalId = setInterval(function(){
-  var cells = space1.querySelectorAll('td:not(.red)')
+  var cells = space1.querySelectorAll(empty)
   var random = Math.floor(Math.random()*cells.length)
 
   cells.length === 0
     ? clearInterval(intervalId)
     : toggleColors(cells[random])
 
-},20)
+},400)
 
 
 // utility function
