@@ -22,28 +22,7 @@ function createTable(width, height){
 }
 createTable(10,10)
 
-// toggling td color
-space1.addEventListener('click',function(event){
-  event.target.matches('td') ? toggleColors(event.target) : null
 
-})
-
-//set interval
-var intervalId = setInterval(function(){
-  var cells = space1.querySelectorAll('td')
-  var random = Math.floor(Math.random()*cells.length)
-    toggleColors(cells[random])
-
-},10,setTimeout(function(){
-  clearInterval(intervalId)
-},10000))
-
-// utility function
-const toggleColors = (item) => {
-  item.classList.contains('red')
-    ? item.classList.remove('red')
-    : item.classList.add('red')
-}
 
 //========================   jQuery table   ===========================
 const $space2 = $('#tabb2')
