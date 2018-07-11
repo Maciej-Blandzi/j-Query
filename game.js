@@ -23,6 +23,17 @@ pauseButton.addEventListener('click',function(){
 })
 
 
+//re-setting the game
+var resetButton = document.getElementById('resetBtn')
+
+resetButton.addEventListener('click',function(){
+  score = 0
+  enemy = 0
+  time = 60
+})
+
+
+
 // counting down time
 var timeInterval = setInterval(function(){
   if(paused){
@@ -61,10 +72,10 @@ var intervalId = setInterval(function(){
 // utility toggle function
 const toggleColors = (item, className) => {
   className = className || 'red'
-    item.classList.contains(className)
-      ? item.classList.remove(className)
-      : item.classList.add(className)
-  }
+  item.classList.contains(className)
+    ? item.classList.remove(className)
+    : item.classList.add(className)
+}
 
 
 // utility eventListener function
@@ -72,7 +83,7 @@ function clicking(event){
   if(paused){
     return
   }
-      event.target.matches(empty)
-          ? (toggleColors(event.target, 'green'), score+=1, scoreDisplay.innerText= 'your score is:  ' + score)
-          : null
+  event.target.matches(empty)
+    ? (toggleColors(event.target, 'green'), score+=1, scoreDisplay.innerText= 'your score is:  ' + score)
+    : null
 }

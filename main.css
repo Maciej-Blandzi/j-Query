@@ -30,6 +30,7 @@ nav a{
   padding: 5px;
   width: 200px;
   box-sizing: border-box;
+  margin-left: 5px;
 }
 #timer{
   font-size: 2rem;
@@ -39,11 +40,15 @@ nav a{
   text-align: center;
   padding: 2px;
   box-sizing: border-box;
+  margin-left: 5px;
 }
-#pauseBtn{
+#pauseBtn,
+#resetBtn{
   background-color: #be1334;
   color: white;
   padding: 5px;
+  width:95px;
+  margin: 5px;
 }
 #tabb{
   background-color: lightcyan;
