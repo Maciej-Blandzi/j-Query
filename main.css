@@ -23,7 +23,8 @@ nav a{
   height: fit-content;
   background-color: lightgreen;
 }
-#score{
+#score,
+#enemy{
   font: italic 700 1.2rem 'Arial', sans-serif;
   border: 1px solid black;
   padding: 5px;

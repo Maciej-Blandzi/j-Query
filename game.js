@@ -1,16 +1,19 @@
 
 var empty = 'td:not(.red):not(.green)'
 var scoreDisplay = document.getElementById('score')
+var enemyDisplay = document.getElementById('enemy')
 var score = 0
+var enemy = 0
 
-scoreDisplay.innerText= 'your score is:  ' + score
+scoreDisplay.innerText= 'your score :  ' + score
+enemyDisplay.innerText= 'enemys score :  ' + enemy
 
 
 // toggling td color
 space1.addEventListener('click',function(event){
   event.target.matches(empty) ? toggleColors(event.target, 'green') : null
   score+=1
-  scoreDisplay.innerText= 'your score is:  ' + score + ' points'
+  scoreDisplay.innerText= 'your score is:  ' + score
 })
 
 
@@ -22,6 +25,8 @@ var intervalId = setInterval(function(){
   cells.length === 0
     ? clearInterval(intervalId)
     : toggleColors(cells[random])
+  enemy+=1
+  enemyDisplay.innerText= 'enemys score is:  ' + enemy
 
 },400)
 
