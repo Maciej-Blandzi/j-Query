@@ -29,11 +29,14 @@ space1.addEventListener('click',function(event){
 })
 
 //set interval
-setInterval(function(){
-  var cell = space1.querySelector('td')
-  toggleColors(cell)
-
-},200)
+var intervalId = setInterval(function(){
+  var cells = space1.querySelectorAll('td')
+  cells.forEach(function(cell)  {
+    toggleColors(cell)
+  })
+},300,setTimeout(function(){
+  clearInterval(intervalId)
+},3000))
 
 // utility function
 const toggleColors = (item) => {
@@ -68,7 +71,9 @@ $('.qq td').on('click',function(){
   $(this).toggleClass('black')
 })
 
-setInterval(function(){
-  let $cell2 = $('.qq td:first')
+const intervalid2 = setInterval(function(){
+  let $cell2 = $('.qq td')
   $cell2.toggleClass('black')
-},100)
+},300,setTimeout(function(){
+  clearInterval(intervalid2)
+},5000))
