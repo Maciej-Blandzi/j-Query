@@ -64,21 +64,21 @@ $(function(){
 
 
 
-$('.formm input:first').on('focus', function(){
-  $(this).replaceWith('<p>this WAS first input and now its gone</p>').toggle()
-});
+// $('.formm input:first').on('focus', function(){
+//   $(this).replaceWith('<p>this WAS first input and now its gone</p>').toggle()
+// });
 
-$('.forrmm input:nth-child(2)').on('focus',function(){
+$('.formm input:nth-child(2)').on('focus',function(){
   $(this).css('border','5px solid blue')
 }).on('blur',function(){
   $(this).css('border','none')
 })
 
-$('.forrmm input:nth-child(3)').on('focus',function(){
+$('.formm input:nth-child(3)').on('focus',function(){
   $(this).css('background-color', 'pink')
 }).on('blur',function(){$(this).css('background-color','white')})
 
-$('.forrmm input:nth-child(4)').on('keydown', function(){
+$('.formm input:nth-child(4)').on('keydown', function(){
   $(this).css('background-color','lightblue')
 }).on('keyup', function(){
   $(this).css('background-color','white')
@@ -146,15 +146,28 @@ $('button#Button05').on('click', function(){
 const $button2 = $('button.btn2')
 const $form2 = $('form.formm')
 const $listHTML = $('li:last').text()
-const $inputValue = $('input:text').val()
+const $inputValue = $('.form2 input:text')
 let $counter = 0
 
 $button2.on('click', function(event){
   event.preventDefault();
-  $counter +=1
-  $(this).after('<div><p>' + $inputValue + '</p></div>')
-         .before('<p>' + $listHTML +'</p>').css('border','5px black solid')
-         .prepend('<p>' + $counter + '</p>')
-  console.log($inputValue)
+  const count = $counter +=1
+  const $input2 = $inputValue.val()
+
+  $(this).css('border','5px black solid')
+
+  $('button.btn3').after('<p>'+count + $input2+'</p>')
+
+  $inputValue.val('')
+
+
+  const $radio = $('input[type="radio"]')
+  const $radioMoved = $radio.clone()
+  $radio.remove()
+
+  $radioMoved.insertAfter('.ul2')
+  $('input[type="checkbox"]').detach().appendTo($form)
 })
+
+
 
