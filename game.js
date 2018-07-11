@@ -21,11 +21,11 @@ var timeInterval = setInterval(function(){
 },1000)
 
 
-// toggling td color
+// toggling td color on click
 space1.addEventListener('click',clicking)
 
 
-//set interval
+//set enemy interval
 var intervalId = setInterval(function(){
   var cells = space1.querySelectorAll(empty)
   var random = Math.floor(Math.random()*cells.length)
@@ -45,14 +45,13 @@ const toggleColors = (item, className) => {
   item.classList.contains(className)
     ? item.classList.remove(className)
     : item.classList.add(className)
+
 }
 
 // utility eventListener function
 function clicking(event){
   event.target.matches(empty)
-    ? toggleColors(event.target, 'green')
+    ? (toggleColors(event.target, 'green'), score+=1, scoreDisplay.innerText= 'your score is:  ' + score)
     : null
-  score+=1
-  scoreDisplay.innerText= 'your score is:  ' + score
 }
 
