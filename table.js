@@ -31,12 +31,12 @@ space1.addEventListener('click',function(event){
 //set interval
 var intervalId = setInterval(function(){
   var cells = space1.querySelectorAll('td')
-  cells.forEach(function(cell)  {
-    toggleColors(cell)
-  })
-},300,setTimeout(function(){
+  var random = Math.floor(Math.random()*cells.length)
+    toggleColors(cells[random])
+
+},10,setTimeout(function(){
   clearInterval(intervalId)
-},3000))
+},10000))
 
 // utility function
 const toggleColors = (item) => {
