@@ -8,11 +8,13 @@ var enemy = 0
 var time = 60
 
 
-
-scoreDisplay.innerText= 'your score :  ' + score
-enemyDisplay.innerText= 'enemys score :  ' + enemy
-timeDisplay.innerText= time + ' sec'
-
+function display() {
+  scoreDisplay.innerText = 'your score :  ' + 0
+  enemyDisplay.innerText = 'enemys score :  ' + 0
+  timeDisplay.innerText = 60 + ' sec'
+  empty = 'td:not(.red):not(.green)'
+}
+display();
 
 //   pausing the game
 var pauseButton = document.getElementById('pauseBtn')
@@ -30,6 +32,9 @@ resetButton.addEventListener('click',function(){
   score = 0
   enemy = 0
   time = 60
+  $('td').removeClass('red green')
+  display()
+
 })
 
 
