@@ -6,109 +6,118 @@
   <link rel="stylesheet" href="main.css" type="text/css">
 </head>
 <body>
-  <header>
-  </header>
 
+    <nav >
+      <div id="navi">
+          <a href="#">top</a>
+          <a href="#formlista">list</a>
+          <a href="#list">form</a>
+          <a href="#table">table</a>
+      </div>
+    </nav>
 
-
-  <main>
-    <section class="formlista">
-      <div id="formlista">
-        <ul class="ul1">
+    <main>
+      <section class="formlista">
+        <div id="formlista">
+          <ul class="ul1">
+            <li>
+              one
+            </li>
+            <li>
+              two
+            </li>
+            <li>
+              three
+            </li>
+          </ul>
+        </div>
+          <div id="newElemContainer"><button id="newElem">ADD NEW ELEMENT</button></div>
+        <form id="form1">
+          <div id="alert"></div>
+          <input type="text" placeholder="add an element to the list here ..." id="inputValue" autofocus="autofocus"/>
+          <input type="submit" value="ADD ELEMENT" id="addNew"/>
+        </form>
+        <button id="date">current time: </button>
+      </section>
+      <hr>
+      <hr>
+    <section class="list" id="list">
+      <div class="lista">
+        <button type="button" class="btn">click to show the list</button>
+        <ul class="ul2">
           <li>
-            one
+            <span>CLICK AND SEE WHAT HAPPENS</span>
           </li>
           <li>
-            two
+            <span>second</span>
           </li>
           <li>
-            three
+            <span>third</span>
+          </li>
+          <li>
+            <span>fourth</span>
+          </li>
+          <li>
+            <span>5</span>
+          </li>
+          <li>
+            <span>6</span>
+          </li>
+          <li>
+            <span>7</span>
+          </li>
+          <li>
+            <span>8</span>
+          </li>
+          <li>
+            <span>LAST</span>
           </li>
         </ul>
-
+        <button id="Button01" type="button"> no styling </button>
+        <button id="Button02" type="button">adding stars</button>
+        <button id="Button03" type="button">   displaying all</button>
+        <button id="Button04" type="button">  double</button>
+        <button id="Button05" type="button">  destruction </button>
       </div>
-        <div id="newElemContainer"><button id="newElem">ADD NEW ELEMENT</button></div>
-      <form id="form1">
-        <div id="alert"></div>
-        <input type="text" placeholder="add an element to the list here ..." id="inputValue" autofocus="autofocus"/>
-        <input type="submit" value="ADD ELEMENT" id="addNew"/>
-      </form>
-      <button id="date">current time: </button>
+      <hr>
+      <div class="formm">
+        <form class="form2">
+          <input type="text"/>
+          <input type="text"/>
+          <input type="text"/>
+          <input type="text"/>
+          <input type="text"/>
+          <input type="text"/><br/>
+          <button type="submit" class="btn2">print ur text below</button>
+          <button type="reset" class="btn3">reset form</button>
+          <br/>
+          <input type="checkbox"/>
+          <input type="checkbox"/>
+          <input type="checkbox"/>
+          <input type="checkbox"/>
+          <br/>
+          <input type="radio" name="radio"/>
+          <input type="radio" name="radio"/>
+          <input type="radio" name="radio"/>
+          <input type="radio" name="radio"/>
+          <input type="radio" name="radio"/>
+        </form>
+      </div>
     </section>
-    <hr>
-    <div class="lista">
-      <button type="button" class="btn">click to show the list</button>
-      <ul class="ul2">
-        <li>
-          <span>CLICK AND SEE WHAT HAPPENS</span>
-        </li>
-        <li>
-          <span>second</span>
-        </li>
-        <li>
-          <span>third</span>
-        </li>
-        <li>
-          <span>fourth</span>
-        </li>
-        <li>
-          <span>5</span>
-        </li>
-        <li>
-          <span>6</span>
-        </li>
-        <li>
-          <span>7</span>
-        </li>
-        <li>
-          <span>8</span>
-        </li>
-        <li>
-          <span>LAST</span>
-        </li>
-      </ul>
-      <button id="Button01" type="button"> no styling </button>
-      <button id="Button02" type="button">adding stars</button>
-      <button id="Button03" type="button">   displaying all</button>
-      <button id="Button04" type="button">  double</button>
-      <button id="Button05" type="button">  destruction </button>
-          </div>
-    <hr>
-    <div class="formm">
-      <form class="form2">
-        <input type="text"/>
-        <input type="text"/>
-        <input type="text"/>
-        <input type="text"/>
-        <input type="text"/>
-        <input type="text"/><br/>
-        <button type="submit" class="btn2">print ur text below</button>
-        <button type="reset" class="btn3">reset form</button>
-        <br/>
-        <input type="checkbox"/>
-        <input type="checkbox"/>
-        <input type="checkbox"/>
-        <input type="checkbox"/>
-        <br/>
-        <input type="radio" name="radio"/>
-        <input type="radio" name="radio"/>
-        <input type="radio" name="radio"/>
-        <input type="radio" name="radio"/>
-        <input type="radio" name="radio"/>
-      </form>
-    </div>
+      <hr>
+      <hr>
+    <section id="table">
+      <div id="tabb"> </div>
+      <hr>
+      <div id="tabb2"></div>
+    </section>
   </main>
-
-
-
-
-
   <footer>
-    <div id="tabb"></div>
   </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="utils.js"></script>
 <script src="table.js"></script>
 <script src="form.js"></script>
+
 </body>
 </html>

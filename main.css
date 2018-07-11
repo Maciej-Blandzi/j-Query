@@ -1,12 +1,34 @@
+body{
+  margin: 0;
+}
+#navi{
+  display:block;
+  /*position: fixed;*/
+  height: 2rem;
+  background-color: darkslategrey;
+  margin-top: 0;
+}
+
+nav a{
+  text-decoration: none;
+  font: normal 400 1.5rem 'Arial', sans-serif;
+  color:white;
+  padding: 5px;
+  margin-left: 4rem;
+  cursor: pointer;
+}
+
 
 .blue{
   width: 500px;
   height: fit-content;
-  background-color: lightblue;
+  background-color: lightgreen;
 }
 
-#tabb{
+#tabb,
+#tabb2{
   background-color: lightcyan;
+  margin-top: 2rem;
 }
 
 td{
@@ -19,6 +41,10 @@ td{
 
 .red{
   background-color: red;
+}
+
+.black{
+  background-color: black;
 }
 
 button{

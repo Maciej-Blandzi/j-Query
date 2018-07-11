@@ -1,14 +1,18 @@
-document.getElementById('tabb')
+// ==================== js table    ==========
+
+var space1= document.getElementById('tabb')
 
 var table = document.createElement('table')
-tabb.appendChild(table)
+var tbody = document.createElement('tbody')
+space1.appendChild(table)
+table.appendChild(tbody)
 
 var td, tr;
 
 function createTable(width, height){
   for(i=0;i<height;i+=1) {
     var tr = document.createElement('tr')
-    table.appendChild(tr)
+    tbody.appendChild(tr)
 
     for(j=0;j<width;j+=1){
       var td=document.createElement('td')
@@ -18,53 +22,40 @@ function createTable(width, height){
   }
 }
 
-createTable(5,5)
+createTable(1,5)
 
+space1.addEventListener('click',function(event){
+  if(event.target.matches('td')){
+    event.target.classList.add('red')
+  }
+})
 
- // function clicking(event){
- //  if(event.target.matches('td')){
- //    event.target.classList.add('red')
- //  }
- // }
- //
- // tabb.addEventListener('click', function(event){
- //   if(event.target.matches('td')){
- //     clicking(event.target)
- //   }
- // })
 
 //========================   jQuery table   ===========================
+const $space2 = $('#tabb2')
+const $table2 = $('<table>')
+const $tbody2 = $('<tbody>')
 
-const $table = $('<table>')
-$('#tabb').after($table)
+$space2.append($table2)
+$table2.append($tbody2)
 
-const createTable2 = (width, height) => {
-  for(i=0;i<height;i+=1) {
-    const $tr = $('<tr>')
-    $table.append($tr)
-
-        for(j=0;j<width;j+=1){
-      const $td = $('<td>')
-      $tr.append($td)
+const $createTable2= (h,w)=> {
+  for(let i=0;i<h;i+=1){
+    const $tr2 = $('<tr>')
+    $tbody2.append($tr2)
+    for(let j=0;j<w;j+=1){
+      const $td2 = $('<td>')
+      $tr2.append($td2)
     }
-}}
+  }
+}
+$createTable2(3,4)
 
-createTable2(7,7)
-
-
-$('td').on('click', function(){
-  $(this)
-    .addClass('red')
-    .on('click',function(){ $(this).removeClass('red')}
-)})
+$tbody2.addClass('qq')
+$('.qq td').on('click',function(){
+  $(this).css('backgroundColor','black')
+})
 
 
-// function switchColor(event){
-//     if(event.target.classList.contains('red')){
-//       event.target.classList.remove('red')
-//     }else{event.target.classList.add('red')
-//     }
-//   }
-//
-//
-// $('td').on('click', switchColor())
+
+
