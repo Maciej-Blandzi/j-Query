@@ -40,10 +40,20 @@ nav a{
   padding: 2px;
   box-sizing: border-box;
 }
-#tabb,
-#tabb2{
+#pauseBtn{
+  background-color: #be1334;
+  color: white;
+  padding: 5px;
+}
+#tabb{
   background-color: lightcyan;
-  margin-top: 2rem;
+  margin: 2rem 0 0 2rem;
+}
+
+#tabb2{
+  background-color: #cae0fb;
+  margin: 2rem 0 ;
+  padding: 20px;
 }
 
 td{

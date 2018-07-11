@@ -30,7 +30,7 @@ const $table2 = $('<table>')
 const $tbody2 = $('<tbody>')
 
 $space2.append($table2)
-$table2.append($tbody2)
+$table2.append($tbody2).css('marginRight','+=400')
 
 const $createTable2= (h,w)=> {
   for(let i=0;i<h;i+=1){
@@ -42,17 +42,6 @@ const $createTable2= (h,w)=> {
     }
   }
 }
-$createTable2(3,4)
+$createTable2(12,12)
+$table2.css('marginLeft','+=100')
 
-$tbody2.addClass('qq')
-
-$('.qq td').on('click',function(){
-  $(this).toggleClass('black')
-})
-
-const intervalid2 = setInterval(function(){
-  let $cell2 = $('.qq td')
-  $cell2.toggleClass('black')
-},300,setTimeout(function(){
-  clearInterval(intervalid2)
-},5000))

@@ -44,7 +44,7 @@ $('.ul2 li:first-child').on('click', function(){
   const $it = $('.ul2 li:nth-child(2)').text()
 console.log($it)
   $('.ul2 li:nth-child(9)').prepend('<em>clicked</em>').append($it)
-  $ul.after('<div>' + $it + '<div')
+  $ul2.after('<div>' + $it + '<div')
 
 })
 
@@ -169,7 +169,7 @@ $button2.on('click', function(event){
   $radio.remove()
 
   $radioMoved.insertAfter('.ul2')
-  $('input[type="checkbox"]').detach().appendTo($form)
+  $('input[type="checkbox"]').detach().appendTo($form2)
 })
 
 
