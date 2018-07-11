@@ -9,22 +9,20 @@ var time = 10
 
 scoreDisplay.innerText= 'your score :  ' + score
 enemyDisplay.innerText= 'enemys score :  ' + enemy
-timeDisplay.innerText= timer + ' sec'
+timeDisplay.innerText= time + ' sec'
 
 
 // counting down time
 var timeInterval = setInterval(function(){
   time-=1
-  time === 0 ? clearInterval(timeInterval) : timeDisplay.innerText= time + ' sec'
+  time === -1
+    ? (clearInterval(timeInterval),  clearInterval(intervalId), space1.removeEventListener('click',clicking))
+    : timeDisplay.innerText= time + ' sec'
 },1000)
 
 
 // toggling td color
-space1.addEventListener('click',function(event){
-  event.target.matches(empty) ? toggleColors(event.target, 'green') : null
-  score+=1
-  scoreDisplay.innerText= 'your score is:  ' + score
-})
+space1.addEventListener('click',clicking)
 
 
 //set interval
@@ -48,3 +46,13 @@ const toggleColors = (item, className) => {
     ? item.classList.remove(className)
     : item.classList.add(className)
 }
+
+// utility eventListener function
+function clicking(event){
+  event.target.matches(empty)
+    ? toggleColors(event.target, 'green')
+    : null
+  score+=1
+  scoreDisplay.innerText= 'your score is:  ' + score
+}
+

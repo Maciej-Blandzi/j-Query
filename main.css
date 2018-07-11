@@ -29,6 +29,16 @@ nav a{
   border: 1px solid black;
   padding: 5px;
   width: 200px;
+  box-sizing: border-box;
+}
+#timer{
+  font-size: 2rem;
+  color: white;
+  background-color: #be1334;
+  width: 200px;
+  text-align: center;
+  padding: 2px;
+  box-sizing: border-box;
 }
 #tabb,
 #tabb2{
