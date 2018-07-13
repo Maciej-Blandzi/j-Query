@@ -1,26 +1,19 @@
+var empty = 'td:not(.red):not(.green)'
+var scoreDisplay = document.getElementById('score')
+var enemyDisplay = document.getElementById('enemy')
+var timeDisplay = document.getElementById('timer')
+var score = 0
+var enemy = 0
+var time = 60
 
-
+const $display = ()=> {
+  scoreDisplay.innerText = 'your score :  ' + 0
+  enemyDisplay.innerText = 'enemys score :  ' + 0
+  timeDisplay.innerText = 60 + ' sec'
+  empty = 'td:not(.red):not(.green)'
+}
+$display();
 function startGame() {
-  var empty = 'td:not(.red):not(.green)'
-  var scoreDisplay = document.getElementById('score')
-  var enemyDisplay = document.getElementById('enemy')
-  var timeDisplay = document.getElementById('timer')
-  var score = 0
-  var enemy = 0
-  var time = 2
-
-
-  function display() {
-    scoreDisplay.innerText = 'your score :  ' + 0
-    enemyDisplay.innerText = 'enemys score :  ' + 0
-    timeDisplay.innerText = 2 + ' sec'
-    empty = 'td:not(.red):not(.green)'
-  }
-
-  display();
-
-
-
 
 // counting down time
   var timeInterval = setInterval(function () {
@@ -29,13 +22,13 @@ function startGame() {
     }
     time -= 1
     time === -1
-      ? (clearInterval(timeInterval), clearInterval(intervalId), space1.removeEventListener('click', clicking))
+      ? (clearInterval(timeInterval), clearInterval(intervalId), gameField.removeEventListener('click', clicking))
       : timeDisplay.innerText = time + ' sec'
   }, 1000)
 
 
 // toggling td color on click
-  space1.addEventListener('click', clicking)
+  gameField.addEventListener('click', clicking)
 
 
 //set enemy interval
@@ -43,7 +36,7 @@ function startGame() {
     if (paused) {
       return
     }
-    var cells = space1.querySelectorAll(empty)
+    var cells = gameField.querySelectorAll(empty)
     var random = Math.floor(Math.random() * cells.length)
 
     cells.length === 0
@@ -77,6 +70,14 @@ function startGame() {
 
 
 
+//starting the game (reset + play)
+var startBtn = document.getElementById('startBtn')
+
+startBtn.addEventListener('click', function () {
+  startGame()
+})
+
+
 
 //   pausing the game
 var pauseButton = document.getElementById('pauseBtn')
@@ -91,15 +92,19 @@ pauseButton.addEventListener('click', function () {
 var resetButton = document.getElementById('resetBtn')
 
 resetButton.addEventListener('click', function () {
+  // score = 0
+  // enemy = 0
+  // time = 60
   $('td').removeClass('red green')
-  display()
+  $display()
 
 })
 
 
 //re-starting the game (reset + play)
-var resetBtn = document.getElementById('restartBtn')
+  var restartBtn = document.getElementById('restartBtn')
 
-resetBtn.addEventListener('click', function () {
-  startGame()
+  restartBtn.addEventListener('click', function () {
+    startGame()
+    $('td').removeClass('red green')
 })

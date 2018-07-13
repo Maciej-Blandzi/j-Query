@@ -1,10 +1,10 @@
 // ==================== js table    ==========
 
-var space1= document.getElementById('tabb')
+var gameField= document.getElementById('tabb')
 
 var table = document.createElement('table')
 var tbody = document.createElement('tbody')
-space1.appendChild(table)
+gameField.appendChild(table)
 table.appendChild(tbody)
 
 var td, tr;

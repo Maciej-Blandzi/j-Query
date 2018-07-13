@@ -50,13 +50,30 @@ nav a{
   margin-left: 5px;
 }
 #pauseBtn,
-#resetBtn{
-  background-color: #be1334;
+#resetBtn,
+#restartBtn,
+#startBtn{
   color: white;
   padding: 5px;
-  width:95px;
+  width:85px;
   margin: 5px;
+  height: 2.5rem;
 }
+#pauseBtn{
+  background-color: #0c7639
+}
+
+#resetBtn{
+  background-color: #be1334
+}
+#restartBtn {
+  background-color: #000
+}
+
+#startBtn {
+  background-color: #122e95
+}
+
 #tabb{
   background-color: lightcyan;
   margin: 2rem 0 0 2rem;
