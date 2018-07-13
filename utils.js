@@ -30,8 +30,6 @@ $(function() {
     'font-size':'+=10'
   })
 
-  $('.formm').css({'display':'flex','flex-flow':'column nowrap'})
-
 
 
 $('.ul2 li:first-child').on('click', function(){
@@ -157,19 +155,21 @@ $button2.on('click', function(event){
   const count = $counter +=1
   const $input2 = $inputValue.val()
 
-  $(this).css('border','5px black solid')
+  const $reset = $('<button>')
+  const $info = '<p>'+count +'. ' + $input2+'</p>'
 
-  $('button.btn3').after('<p>'+count +'. ' + $input2+'</p>')
+
+  $('button.btn3').after($info).append($reset)
 
   $inputValue.val('')
 
 
-  const $radio = $('input[type="radio"]')
-  const $radioMoved = $radio.clone()
-  $radio.remove()
-
-  $radioMoved.insertAfter('.ul2')
-  $('input[type="checkbox"]').detach().appendTo($form2)
+  // const $radio = $('input[type="radio"]')
+  // const $radioMoved = $radio.clone()
+  // $radio.remove()
+  //
+  // $radioMoved.insertAfter('.ul2')
+  // $('input[type="checkbox"]').detach().appendTo($form2)
 })
 
 

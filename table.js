@@ -30,7 +30,7 @@ const $table2 = $('<table>')
 const $tbody2 = $('<tbody>')
 
 $space2.append($table2)
-$table2.append($tbody2).css('marginRight','+=400')
+$table2.append($tbody2).css('marginLeft','+=100')
 
 const $createTable2= (h,w)=> {
   for(let i=0;i<h;i+=1){
@@ -40,8 +40,7 @@ const $createTable2= (h,w)=> {
       const $td2 = $('<td>')
       $tr2.append($td2)
     }
-  }
+  }console.log($table2.offset().top, $(window).height())
 }
 $createTable2(12,12)
-$table2.css('marginLeft','+=100')
 

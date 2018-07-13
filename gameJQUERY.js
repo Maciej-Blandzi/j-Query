@@ -8,7 +8,9 @@ $('.qq td').on('click',function(){
 
 
 const intervalid2 = setInterval(function(){
-  let $cell2 = $('.qq td:nth-child(4)')
+  let $cell2 = $('.qq td')
+  let $random = Math.floor(Math.random()*$cell2.length);  //144
+
   $cell2.toggleClass('black')
 },300,setTimeout(function(){
   clearInterval(intervalid2)
